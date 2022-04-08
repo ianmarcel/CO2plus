@@ -1,0 +1,129 @@
+<html><head>  
+    <meta charset="utf-8">
+    <title>Calculadora CO2</title>
+    <link rel="stylesheet" href="formulariopadrao.css">
+   <!-- <script type="text/javascript" src="javascrip.js"></script> -->   
+</head>
+    <body>
+        <header class="header">
+            <h1>CALCULADORA DE CO2</h1>
+            <div>
+                <ul>
+                    <li><a href="formulario0.html">Início</a></li>
+                </ul>
+            </div>
+        </header>
+        
+        <main class="main">
+            <form id="formulario">
+                <!--PARA VOLTA AO NORMAL COLOQUE somatorio pro final e tire o css dele-->
+                <div class="SomatorioTotal">
+                    <legend><h2>Emissão de total CO2 </h2></legend>
+                    <p id="resultadoTotalMes"><h3>resultado tco2/mes:</h3></p>
+                    <p id="resultadoTotalAno"><h3>resultado tco2/ano:</h3></p>
+                </div>
+           
+                <div class="carro">
+                    <legend><h2>Emissão de CO2 por consumo de combustível</h2></legend>
+               
+                    <p for="id_carro=">Selecione o veiculo que usa no seu cotidiano:</p>
+                    <select id="carro" name="car">
+                        <option value="0.00021">carro a gasolina(motor ate 1.4)</option>
+                        <option value="0.00024">carro a gasolina(motor 1.5 ate 2.0)</option>
+                        <option value="0.0003">carro a gasolina(motor acima de  2.0)</option>
+                        <option value="0.00035"> pick-up(diesel)</option>
+                        <option value="0.000027">onibus</option>
+                    </select> <br>
+                
+                    <p for="id_nome=">Kilometragem do veiculo:</p>
+                    <input type="text" name="nome" id="id_km" onchange="change()" required="" autofocus="" placeholder="Digite a km/mes"><br>
+
+                    <p></p><h3>resultado tco2/mes:</h3><p></p>
+                    <p id="resultadoco2MesCarro"></p>
+                    <p></p><h3>resultado tco2/ano:</h3><p></p>
+                    <p id="resultadoco2ANOCarro"></p>
+
+                </div>
+                    
+                <div class="eletricidade">
+                    <legend><h2>Emissão de CO2 por consumo de energia elétrica</h2></legend>
+                    <p for="id_Luz=">Consumo de energia:</p>
+                    <input type="text" name="energy" id="id_energia" onchange="change()" required="" autofocus="" placeholder="Digite consumo de energia em kwh/mes"><br>
+                    <p></p><h3>resultado tco2/mes:</h3><p></p>
+                    <p id="resultadoEnergiaMes"></p>
+                    <p></p><h3>resultado tco2/ano:</h3><p></p>
+                    <p id="resultadoEnergiaAno"></p>
+                </div>                    
+                    
+                <div class="gas">
+                    <legend><h2>Emissão de CO2 por consumo de gás de cozinha</h2></legend>
+                    <p for="id_GAS=">Consumo de gás:</p>
+                    <input type="text" name="gas" id="cozinha"  onchange="change()"required="" autofocus="" placeholder="Digite consumo gas de cozinha em butijoes/mes"><br>
+                    <p></p><h3>resultado tco2/mes:</h3><p></p>
+                    <p id="resultadoGasButanoMes"></p>
+                    <p></p><h3>resultado tco2/ano:</h3><p></p>
+                    <p id="resultadoGasButanoAno"></p>
+                </div>   
+                
+                
+
+
+           <input class="button" type="submit" value="confirmar">
+           
+        </form>
+        </main>
+
+        <footer class="footer">            
+        </footer>
+
+        <script>
+            function change(){
+            let veiculoVar = document.getElementById("carro").value 
+            let kmMesVar = document.getElementById("id_km").value
+            let resultadoVeiculo = veiculoVar *  kmMesVar 
+            document.getElementById("resultadoco2MesCarro").innerHTML=resultadoVeiculo
+            let resultadoVeiculoANO = resultadoVeiculo *12
+            document.getElementById("resultadoco2ANOCarro").innerHTML=resultadoVeiculoANO
+     
+            let energiaMes =document.getElementById("id_energia").value
+            let resultadoEnergyMes = energiaMes * 0.000051 
+            document.getElementById("resultadoEnergiaMes").innerHTML=resultadoEnergyMes
+            let resultadoEnergyAno =  resultadoEnergyMes * 12
+            document.getElementById("resultadoEnergiaAno").innerHTML=resultadoEnergyAno
+     
+            let GasMes =document.getElementById("cozinha").value
+            let resultadoGasMes = GasMes * 0.04 
+            document.getElementById("resultadoGasButanoMes").innerHTML=resultadoGasMes 
+            let resultadoGasANO =  resultadoGasMes  * 12
+            document.getElementById("resultadoGasButanoAno").innerHTML=resultadoGasANO
+
+            let totalMes=  resultadoVeiculo + resultadoEnergyMes + resultadoGasMes
+            document.getElementById("resultadoTotalMes").innerHTML=totalMes
+            let totalAno=  totalMes *12
+            document.getElementById("resultadoTotalAno").innerHTML=totalAno
+            // pode colocar uma outra variavel que seja a soma das tres 
+            //tipo let totalMes =
+            // let totalAno=
+            //e usa a ideia do monitor, que ele passou ontem no whatsap 
+           
+            
+           
+            
+     
+             
+     
+            }
+            document.getElementById('formulario').addEventListener("submit", (e) => {
+             e.preventDefault()   
+             window.location.href="formulario2.html"
+                
+            }
+            );
+         </script>
+        
+    
+
+
+
+
+</body></html>

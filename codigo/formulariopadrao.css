@@ -1,0 +1,78 @@
+*{margin: 0;
+    padding: 0;
+    }
+    
+    .header{
+        background-color: rgb(88, 161, 88);
+        text-align: center;
+        padding: 5px;
+    }
+    
+    .header h1{
+        color: white;
+    }
+    
+    .main{
+        padding: 10px;
+        background-color: rgb(192, 189, 189);
+    }
+    
+    .main div{
+        padding: 10px;
+    }
+    
+    .carro{
+        background-color: rgb(166, 219, 166);
+    }
+    .eletricidade{
+        background-color: rgb(124, 161, 124);
+    }
+    .gas{
+        background-color: rgb(166, 219, 166);
+    }
+    .SomatorioTotal{
+        background-color: chartreuse;
+    }
+    #resultadoTotalAno{
+        color:darkblue;
+    }
+    
+    .main p{
+        margin-top: 5px;
+    }
+    
+    h2{
+        color: rgb(27, 44, 23);
+    }
+    
+    h3{
+        color: rgb(134, 29, 29);
+    }
+    
+    .button{
+        background-color: rgb(89, 138, 17);
+        padding: 10px;
+        color: white;
+    }
+    
+    .header a{
+        text-decoration: none;
+        color: white;
+    }
+    
+    .footer{
+        background-color: rgb(88, 161, 88);
+        padding: 30px;
+    }
+    .SomatorioTotal{
+    position: initial;
+    /*position: relative;*/
+    font-size: x-large;
+    float: right !important;
+    height: 700px;
+    width: 400px;
+    }
+    
+    
+    
+    
